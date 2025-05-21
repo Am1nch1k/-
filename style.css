@@ -1,0 +1,170 @@
+/* Основные переменные */
+:root {
+  --primary: #2d3436;
+  --secondary: #e17055;
+  --accent: #00b894;
+  --light: #f5f6fa;
+  --dark: #2f3640;
+  --text: #333;
+  --border: #dfe6e9;
+}
+
+/* Базовые стили */
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--light);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Шапка */
+header {
+  background: var(--primary);
+  color: white;
+  padding: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  text-align: center;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+nav a.active {
+  background: var(--accent);
+  font-weight: 500;
+}
+
+/* Формы */
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+form h2 {
+  margin-top: 0;
+  color: var(--primary);
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0,184,148,0.1);
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+
+button:hover {
+  background: #009d7a;
+}
+
+/* Блоки с бронированиями */
+.main_orders {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.orders > div {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--accent);
+}
+
+.orders p {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orders span {
+  font-weight: normal;
+  color: #555;
+}
+
+.review-btn {
+  background: var(--secondary);
+  margin-top: 1rem;
+}
+
+.review-btn:hover {
+  background: #d35400;
+}
+
+/* Фильтры в админке */
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters select, .filters input {
+  flex: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  form {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .filters {
+    flex-direction: column;
+  }
+}
